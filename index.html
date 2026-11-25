@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akash Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#f6efe0;--sub:#b9b2a2;--gold:#f5b800;--red:#e03a2b;--card:#14110b;--line:#2a2418;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;line-height:1.1}
+em{color:var(--gold);font-style:italic}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);z-index:5}
+.nav{display:flex;align-items:center;gap:26px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font:700 21px 'Playfair Display',serif}
+.logo i{width:36px;height:36px;border-radius:50%;background:#1b1608;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);font-style:normal;font-size:19px}
+.nav nav{display:flex;gap:24px;font-weight:500;font-size:15px;flex:1;margin-left:14px}
+.nav nav a:hover{color:var(--gold)}
+.pill{display:inline-block;padding:11px 22px;border-radius:999px;font:600 15px Inter,sans-serif;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.pill.y{background:var(--gold);border-color:var(--gold);color:#000}
+.pill.r{background:var(--red);border-color:var(--red);color:#fff}
+.pill:hover{filter:brightness(1.12)}
+.hero{padding:70px 0 80px;background:radial-gradient(60% 50% at 70% 30%,rgba(245,184,0,.1),transparent),radial-gradient(40% 40% at 0% 70%,rgba(224,58,43,.1),transparent)}
+.hg{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,86px);font-weight:700;letter-spacing:-.01em}
+.hero p.l{color:var(--sub);font-size:19px;max-width:44ch;margin:22px 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 16px;font-size:14px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.stage{position:relative;height:540px}
+.phone{position:absolute;left:50%;top:0;transform:translateX(-50%);width:270px;height:540px;border-radius:40px;border:2px solid #3a321f;background:linear-gradient(160deg,#1a160c,#070605);padding:20px 16px;box-shadow:0 30px 80px rgba(245,184,0,.12)}
+.phone:before{content:"";display:block;width:80px;height:16px;border-radius:99px;background:#000;margin:0 auto 18px}
+.ph{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:10px}
+.ph b{border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:1px 10px;font-weight:500;font-size:11px}
+.pick{border:1px solid #4a3f1f;border-radius:16px;padding:14px;text-align:center;background:rgba(245,184,0,.06);margin-bottom:10px}
+.pick small{color:var(--gold);font-size:10px;letter-spacing:.06em}
+.pick h3{color:var(--gold);font-size:28px;margin:4px 0}
+.pick span{font-size:12px;color:var(--sub)}
+.row{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:#0e0c07;border-radius:11px;padding:9px 12px;font-size:13px;margin-bottom:7px}
+.row.on{border-color:var(--gold)}
+.fl{position:absolute;background:#0f0d08;border:1px solid #3a321f;border-radius:16px;padding:12px 16px;font-size:13px;display:flex;gap:11px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.6)}
+.fl i{width:34px;height:34px;border-radius:10px;background:#1b1608;display:grid;place-items:center;font-style:normal}
+.fl b{display:block;font-size:14px}
+.fl span{color:var(--sub);font-size:12px}
+section{padding:80px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(32px,5vw,50px);margin-bottom:12px}
+.lead{color:var(--sub);max-width:56ch;margin:0 0 36px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.card h3{font-size:23px;margin:10px 0 8px}
+.card p{margin:0;color:var(--sub);font-size:16px}
+.card .ic{font-size:26px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tabs button{padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:500 15px Inter,sans-serif;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--gold);color:#000;border-color:var(--gold)}
+.menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.menu li{display:flex;justify-content:space-between;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.menu strong{display:block;font-weight:600}
+.menu small{color:var(--sub);font-size:14px}
+.menu .p{color:var(--gold);font-weight:600;white-space:nowrap}
+.stars{color:var(--gold);letter-spacing:2px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--sub)}
+.book{background:var(--card);border:1px solid #4a3f1f;border-radius:26px;padding:40px 32px}
+.fr{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:24px 0 18px}
+label{display:block;font-size:14px;color:var(--sub);margin-bottom:5px}
+input,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#000;color:var(--ink);font:16px Inter,sans-serif}
+#ok{margin:16px 0 0;color:var(--gold);font-weight:600;min-height:1.6em}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--sub);font-size:15px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){.hg{grid-template-columns:1fr}.stage{height:560px}.grid3,.menu{grid-template-columns:1fr}.nav nav{display:none}.nav{justify-content:space-between}.fl.a{left:0!important}.fl.b{right:0!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w nav">
+<a class="logo" href="#"><i>A</i>Akash <em>Restaurant</em></a>
+<nav><a href="#why">Why Akash</a><a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></nav>
+<a class="pill" href="#menu">View menu</a><a class="pill y" href="#book">Book a table</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="w hg">
+<div>
+<h1>Tandoor ki aanch, <em>ghar</em> jaisa swaad.</h1>
+<p class="l">Fresh masale, dhimi aanch par pakki dal aur garma-garam naan, sab kuchh ek hi chhat ke neeche. Family ke saath aaiye.</p>
+<div class="chips"><span class="chip">Pure veg + non-veg</span><span class="chip">Family seating</span><span class="chip">Home delivery</span></div>
+<div class="btns"><a class="pill r" href="#book">Book a table</a><a class="pill" href="#menu">See the menu</a></div>
+</div>
+<div class="stage">
+<div class="fl a" style="left:-10px;top:40px"><i>🔥</i><div><b>Fresh from tandoor</b><span>Sample</span></div></div>
+<div class="phone">
+<div class="ph"><span>Today's menu</span><b>Sample</b></div>
+<div class="pick"><small>CHEF'S PICK</small><h3>Dal Makhani</h3><span>Slow-cooked overnight • ₹220</span></div>
+<div class="row on"><span>Butter Chicken</span><b>₹340</b></div>
+<div class="row"><span>Shahi Paneer</span><b>₹280</b></div>
+<div class="row"><span>Paneer Tikka</span><b>₹260</b></div>
+<div class="row"><span>Veg Biryani</span><b>₹250</b></div>
+<div class="row"><span>Butter Naan</span><b>₹50</b></div>
+</div>
+<div class="fl b" style="right:-10px;top:330px"><i>🍽️</i><div><b>Table booked</b><span>Sample • 4 guests, 8 pm</span></div></div>
+</div>
+</div></div>
+
+<section id="why"><div class="w">
+<h2>Why <em>Akash</em></h2>
+<p class="lead">Khana wahi jo roz ghar mein bane, bas thoda zyada pyaar se.</p>
+<div class="grid3">
+<div class="card"><div class="ic">🌿</div><h3>Roz taaza masale</h3><p>Masale roz peese jaate hain, packet wale nahi. Isliye swaad alag hai.</p></div>
+<div class="card"><div class="ic">🔥</div><h3>Asli tandoor</h3><p>Naan, roti aur tikka sab clay tandoor se seedha aapki table par.</p></div>
+<div class="card"><div class="ic">👨‍👩‍👧</div><h3>Family ke liye</h3><p>Bada seating area, bachchon ke liye alag menu aur saaf-suthra mahaul.</p></div>
+</div></div></section>
+
+<section id="menu"><div class="w">
+<h2>Our <em>menu</em></h2>
+<p class="lead">Sample dishes aur rates. Asli menu aap bata dein to main badal dunga.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<ul class="menu" id="list"></ul>
+</div></section>
+
+<section id="reviews"><div class="w">
+<h2>Mehmaan kya <em>kehte</em> hain</h2>
+<p class="lead">Ye sample reviews hain. Asli reviews milne par yahan lagaye jaayenge.</p>
+<div class="grid3">
+<div class="card"><div class="stars">★★★★★</div><h3>Dal ka jawab nahi</h3><p>Dal makhani ekdum ghar jaisi thi aur naan garam mila. Zaroor wapas aayenge.</p></div>
+<div class="card"><div class="stars">★★★★★</div><h3>Family ke liye perfect</h3><p>Bachchon aur bado, sabko pasand aaya. Service bhi tez thi.</p></div>
+<div class="card"><div class="stars">★★★★★</div><h3>Paisa vasool</h3><p>Portion bada hai aur daam sahi. Paneer tikka sabse badhiya laga.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="w">
+<h2>Aksar pooche jaane wale <em>sawal</em></h2>
+<p class="lead"></p>
+<details><summary>Kya table pehle se book karni padegi?</summary><p>Weekdays mein walk-in chalta hai, par weekend aur tyohaar par booking behtar rehti hai.</p></details>
+<details><summary>Kya home delivery hoti hai?</summary><p>Haan, paas ke ilaake mein delivery hoti hai. Phone par order kar sakte hain.</p></details>
+<details><summary>Kya pure veg options milte hain?</summary><p>Haan, menu mein veg aur non-veg dono hain, aur dono ka khana alag banta hai.</p></details>
+</div></section>
+
+<section id="book"><div class="w"><div class="book">
+<h2>Book a <em>table</em></h2>
+<p class="lead" style="margin:0">Naam, din aur time bataiye. Hum aapki table ready rakhenge.</p>
+<form id="f">
+<div class="fr">
+<div><label for="n">Name</label><input id="n" required autocomplete="name"></div>
+<div><label for="g">Guests</label><select id="g"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+<div><label for="d">Date</label><input id="d" type="date" required></div>
+<div><label for="t">Time</label><input id="t" type="time" value="20:00" required></div>
+</div>
+<button class="pill y" type="submit">Confirm booking</button>
+<p id="ok" role="status"></p>
+</form>
+</div></div></section>
+</main>
+
+<footer><div class="w"><span>© Akash Restaurant</span><span>Lunch 12–3:30 pm • Dinner 7–11 pm • +91 00000 00000</span></div></footer>
+
+<script>
+var M={
+"Starters":[["Paneer Tikka","Tandoor mein pakaa, pudine ki chutney ke saath","₹260"],["Hara Bhara Kabab","Palak, matar aur aloo","₹200"],["Chicken Tikka","Dahi aur masale mein marinate","₹320"],["Veg Manchurian","Crispy, tangy gravy ke saath","₹180"]],
+"Main course":[["Dal Makhani","Raat bhar dhimi aanch par pakaa","₹220"],["Shahi Paneer","Malai aur kaju ki gravy","₹280"],["Butter Chicken","Makhan aur tamatar ki gravy","₹340"],["Mix Veg","Mausam ki sabziyan","₹210"]],
+"Breads and rice":[["Butter Naan","Tandoor se seedha","₹50"],["Tandoori Roti","Atta ki, kadak","₹25"],["Jeera Rice","Basmati, bhuna jeera","₹140"],["Veg Biryani","Dum par pakaa, raita ke saath","₹250"]],
+"Sweets and drinks":[["Gulab Jamun","Garam, 2 pieces","₹80"],["Kulfi Falooda","Thandi, malai wali","₹120"],["Masala Chai","Adrak aur elaichi","₹30"],["Sweet Lassi","Gaadhi, matke jaisi","₹70"]]
+};
+var tabs=document.getElementById('tabs'),list=document.getElementById('list');
+function show(k){
+ [].forEach.call(tabs.children,function(b){b.setAttribute('aria-selected',b.textContent===k)});
+ list.innerHTML='';
+ M[k].forEach(function(i){
+  var li=document.createElement('li');
+  li.innerHTML='<div><strong></strong><small></small></div><span class="p"></span>';
+  li.querySelector('strong').textContent=i[0];
+  li.querySelector('small').textContent=i[1];
+  li.querySelector('.p').textContent=i[2];
+  list.appendChild(li);
+ });
+}
+Object.keys(M).forEach(function(k,x){
+ var b=document.createElement('button');
+ b.textContent=k;b.setAttribute('role','tab');
+ b.onclick=function(){show(k)};
+ tabs.appendChild(b);
+ if(x===0)show(k);
+});
+document.getElementById('d').min=new Date().toISOString().slice(0,10);
+document.getElementById('f').onsubmit=function(e){
+ e.preventDefault();
+ document.getElementById('ok').textContent='Shukriya '+document.getElementById('n').value+'! Aapki table '+document.getElementById('d').value+' ko '+document.getElementById('t').value+' baje ke liye note kar li gayi hai.';
+};
+</script>
+</body>
+</html>
